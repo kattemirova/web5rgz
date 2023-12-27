@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+
+{% block main %}
+    <h1>Доступные объявления</h1>
+
+    <table style="text-align: center;">
+        <thead>
+            <tr>
+                <th>Название</th>
+                <th>Дата</th>
+                <th>Действие</th>
+            </tr>
+        </thead>
+        <tbody id="course-list"></tbody>
+    </table>
+
+    <script>
+        fillAdvertisementsList();
+    </script>
+
+    <div>
+        <button onclick="addCourse()">Добавить курс</button>
+    </div>
+
+    <div class="modal">
+        <input type="hidden" id="id">
+        <label>
+            Название курса:
+            <input type="text" id="text">
+        </label><br>
+
+
+        <label>
+            Дата:
+            <input type="text" id="title">
+        </label><br>
+
+        <button onclick="sendCourse()">ОК</button>
+        <button onclick="cancel()">Отмена</button>
+    </div>
+
+{%  endblock %}

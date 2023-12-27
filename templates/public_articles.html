@@ -1,0 +1,28 @@
+
+{% extends "base.html" %}
+
+{% block main %}
+
+  {% if articles %}
+    <div>
+      {% for article in articles %}
+        <h2>{{ article[1] }}</h2>
+        <p style="text-align: left;">{{ article[2] }}</p>
+        <p style="text-align: left;">Автор: {{ article[3] }}</p>
+        {% if username %}
+            <p style="text-align: left;">Связаться в автором: {{ article[4] }}</p>
+        {% endif %}
+        {% if article[3] == username %}
+          <a href="/edit_article/{{ article[0] }}">Edit</a>
+          <form action="/delete_article/{{ article[0] }}" method="post">
+            <input type="submit" value="Delete">
+          </form>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No articles found.</p>
+  {% endif %}
+
+{% endblock %}
+

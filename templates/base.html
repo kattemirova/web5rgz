@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Темирова Екатерина, РГЗ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    {% block script %}{% endblock %}
+</head>
+<body>
+    <header>
+        <div class="glavdiv">
+            <ul class="ul">
+                <li class="glav", style="float: left;"><h2>Доска объявлений</h2></li>
+                <li class="glav"><a href="/show"><p>Ваши объявления</p></a></li>
+                <li class="glav"><a href="/public_articles"><p>Статьи</p></a></li>
+                <li class="glav"><a href="/new_article"><p>Создать объявление</a></p></li>
+                <li class="glav", style="float: right;"><p>{{ username }}</p></li>
+                <li class="glav", style="float: right; border: 1px solid; padding-left: 15px; padding-right: 15px;"><a href="/delete"><p>Удалить профиль</a></p></li>
+                <li class="glav", style="float: right; border: 1px solid #ffecd5; padding-left: 5px; padding-right: 5px; background-color: gainsboro;"><a href="/register"><p>Регистрация</a></p></li>
+                <li class="glav", style="float: right; border: 1px solid; padding-left: 15px; padding-right: 15px;"><a href="/logout"><p>Выход</a></p></li>
+                <li class="glav", style="float: right; border: 1px solid; padding-left: 15px; padding-right: 15px;"><a href="/login"><p>Вход</a></p></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        {% block main %}{% endblock %}
+
+    </main>
+
+    <footer>
+        &copy; Темирова Екатерина ФБИ-11, 3 курс, 2023
+    </footer>
+</body>
+</html>

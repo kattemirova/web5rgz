@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block main %}
+<h1>{{ article.title }}</h1>
+<p>{{ article.text }}</p>
+{% if edit_link %}
+  <a href="{{ edit_link }}">Edit this article</a>
+{% endif %}
+
+
+{% endblock %}

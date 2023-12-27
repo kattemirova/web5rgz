@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block main %}
+    <h1>Новое объявление</h1>
+    <div class="error">{{ errors }}</div>
+    <form method="POST">
+        <input name="title_article" type="text" placeholder="Название">
+        <textarea name="text_article" placeholder="Текст статьи" rows="20"></textarea>            
+    
+
+
+        <input type="submit" value="Apply">
+    </form>
+
+{% endblock %}
